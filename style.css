@@ -1,0 +1,677 @@
+/* Import Google Fonts for a clean, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;500;700&display=swap');
+
+:root {
+    --primary-blue: #007bff;
+    /* Azul vibrante para CTAs e destaques */
+    --light-blue: #e0f2f7;
+    /* Azul claro para fundos sutis */
+    --dark-blue: #0056b3;
+    /* Azul escuro para hover */
+    --gray-text: #555;
+    /* Cinza para textos gerais */
+    --light-gray: #f8f8f8;
+    /* Cinza muito claro para fundos */
+    --border-gray: #ddd;
+    /* Cinza para bordas */
+    --white: #ffffff;
+    --black: #333;
+    --success-green: #28a745;
+    /* Cor para mensagens de sucesso ou ícones verdes */
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Suaviza a rolagem para âncoras */
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--gray-text);
+    background-color: var(--white);
+    overflow-x: hidden;
+    /* Evita rolagem horizontal indesejada */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--black);
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 2.8em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: var(--primary-blue);
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--dark-blue);
+}
+
+/* Buttons */
+.cta-button,
+.submit-button {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.cta-button:hover,
+.submit-button:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+}
+
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--success-green);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button i {
+    font-size: 1.2em;
+}
+
+.whatsapp-button:hover {
+    background-color: #218838;
+    /* Um verde um pouco mais escuro */
+}
+
+/* Header */
+.main-header {
+    background-color: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 90px;
+    width: 6rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--black);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-whatsapp {
+    padding: 10px 20px;
+}
+
+.hamburger-menu {
+    display: none;
+    /* Escondido por padrão, visível apenas em mobile */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--black);
+    cursor: pointer;
+}
+
+/* Hero Section (Home) */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-image.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 20px 100px;
+    /* Ajusta padding para header fixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    /* Altura mínima para ocupar boa parte da tela */
+    /* Espaçamento para o header fixo */
+    margin-top: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.5;
+}
+
+/* Services Section */
+.services-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+    text-align: center;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.service-card i {
+    font-size: 3.5em;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+}
+
+.service-card p {
+    font-size: 0.95em;
+    color: var(--gray-text);
+}
+
+/* Appointment/Contact Section */
+.appointment-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.appointment-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem linha */
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-form {
+    flex: 1;
+    /* Permite que o formulário ocupe o espaço disponível */
+    min-width: 300px;
+    /* Garante um tamanho mínimo */
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    background-color: var(--light-blue);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h3 {
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05em;
+}
+
+.contact-info p i {
+    color: var(--primary-blue);
+    font-size: 1.2em;
+}
+
+.map-container {
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    display: block;
+    /* Remove espaço extra abaixo do iframe */
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.dentist-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.dentist-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--primary-blue);
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.dentist-info h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.dentist-info p {
+    font-size: 1em;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.testimonials {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.testimonials h3 {
+    text-align: center;
+    color: var(--dark-blue);
+    margin-bottom: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary-blue);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.patient-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-blue);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 0.95em;
+    color: var(--gray-text);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.footer-section p {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.footer-section p i {
+    margin-right: 10px;
+    color: var(--primary-blue);
+}
+
+.social-media a {
+    color: var(--white);
+    font-size: 1.8em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--primary-blue);
+}
+
+.quick-links ul {
+    list-style: none;
+}
+
+.quick-links ul li {
+    margin-bottom: 10px;
+}
+
+.quick-links ul li a {
+    color: var(--white);
+    font-size: 0.95em;
+}
+
+.quick-links ul li a:hover {
+    color: var(--primary-blue);
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom .container p {
+    margin-top: 1rem;
+}
+
+/* Fixed WhatsApp Button */
+.whatsapp-fixed-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--success-green);
+    color: var(--white);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.whatsapp-fixed-button:hover {
+    transform: scale(1.1);
+    background-color: #218838;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-nav {
+        display: none;
+        /* Esconde o menu de navegação em telas menores */
+    }
+
+    .header-whatsapp {
+        display: none;
+        /* Esconde o botão do WhatsApp do cabeçalho em telas menores */
+    }
+
+    .hamburger-menu {
+        display: block;
+        /* Mostra o ícone de hambúrguer */
+    }
+
+    .main-header.active .main-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        /* Abaixo do cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        border-top: 1px solid var(--border-gray);
+    }
+
+    .main-header.active .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .appointment-content,
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form,
+    .contact-info,
+    .dentist-info,
+    .testimonials {
+        width: 90%;
+        /* Ocupa mais largura em telas menores */
+        max-width: 500px;
+        /* Limita a largura máxima para formulários */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: unset;
+        /* Remove o min-width para melhor adaptação */
+        width: 100%;
+    }
+
+    .social-media {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    .hero-section {
+        padding: 120px 20px 80px;
+        min-height: 60vh;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .whatsapp-fixed-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+        bottom: 20px;
+        right: 20px;
+    }
+}
