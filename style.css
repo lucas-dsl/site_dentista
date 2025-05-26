@@ -202,8 +202,8 @@ a:hover {
 
 /* Hero Section (Home) */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-image.jpg') no-repeat center center/cover;
-    color: var(--white);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('icons/hero-image.jpg') no-repeat center/cover;
+    color: var(--white);    
     text-align: center;
     padding: 150px 20px 100px;
     /* Ajusta padding para header fixo */
